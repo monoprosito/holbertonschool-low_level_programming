@@ -1,9 +1,9 @@
 #include <unistd.h>
 
 /**
-  * main - sss
+  * main - Prints a text
   *
-  * Return: sss
+  * Return: Always 1 (Success)
   */
 int main(void)
 {
