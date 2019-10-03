@@ -11,7 +11,7 @@ int calc_signs(int num, int min, int mor);
 int _atoi(char *s)
 {
 	int c = 0;
-	int ni = 0;
+	unsigned int ni = 0;
 	int min = 0;
 	int mor = 0;
 	int isi;
