@@ -36,17 +36,14 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		}
 	}
 
-	if (new_size > old_size)
+	nptr = malloc(new_size);
+
+	if (nptr == NULL)
+		return (NULL);
+
+	for (i = 0; i < old_size && i < new_size; i++)
 	{
-		nptr = malloc(new_size);
-
-		if (nptr == NULL)
-			return (NULL);
-
-		for (i = 0; i < old_size && i < new_size; i++)
-		{
-			nptr[i] = ((int *) ptr)[i];
-		}
+		nptr[i] = ((int *) ptr)[i];
 	}
 
 	free(ptr);
