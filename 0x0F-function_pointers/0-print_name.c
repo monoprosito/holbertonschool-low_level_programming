@@ -9,10 +9,8 @@
   */
 void print_name(char *name, void (*f)(char *))
 {
-	void (*ptrtf)(char *) = f;
-
-	if (name == NULL)
-		ptrtf("");
+	if (name == NULL && f == NULL)
+		f("");
 	else
-		ptrtf(name);
+		f(name);
 }
