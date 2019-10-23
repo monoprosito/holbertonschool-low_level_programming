@@ -11,5 +11,6 @@ void print_name(char *name, void (*f)(char *))
 {
 	void (*ptrtf)(char *) = f;
 
-	ptrtf(name);
+	if (name != NULL)
+		ptrtf(name);
 }
