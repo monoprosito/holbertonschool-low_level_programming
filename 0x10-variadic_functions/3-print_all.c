@@ -31,10 +31,10 @@ void print_all(const char * const format, ...)
 			if (format[i] == *form_types[j].identifier)
 			{
 				form_types[j].f(separator, args);
-				separator = ", ";
 			}
 			j++;
 		}
+		separator = ", ";
 		i++;
 	}
 
