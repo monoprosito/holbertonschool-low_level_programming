@@ -92,7 +92,7 @@ void print_a_char_ptr(char *separator, va_list args)
 	if (arg == NULL)
 	{
 		printf("%s%s", separator, "(nil)");
-		exit(0);
+		return;
 	}
 
 	printf("%s%s", separator, arg);
