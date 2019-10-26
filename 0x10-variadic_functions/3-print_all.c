@@ -90,8 +90,11 @@ void print_a_char_ptr(char *separator, va_list args)
 	char *arg = va_arg(args, char *);
 
 	if (arg == NULL)
+	{
 		printf("%s%s", separator, "(nil)");
-	else
-		printf("%s%s", separator, arg);
+		exit(0);
+	}
+
+	printf("%s%s", separator, arg);
 }
 
