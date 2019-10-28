@@ -31,10 +31,10 @@ void print_all(const char * const format, ...)
 			if (format[i] == *form_types[j].identifier)
 			{
 				form_types[j].f(separator, args);
+				separator = ", ";
 			}
 			j++;
 		}
-		separator = ", ";
 		i++;
 	}
 
@@ -87,6 +87,14 @@ void print_a_float(char *separator, va_list args)
   */
 void print_a_char_ptr(char *separator, va_list args)
 {
-	printf("%s%s", separator, va_arg(args, char *));
+	char *arg = va_arg(args, char *);
+
+	if (arg == NULL)
+	{
+		printf("%s%s", separator, "(nil)");
+		return;
+	}
+
+	printf("%s%s", separator, arg);
 }
 
