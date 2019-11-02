@@ -26,7 +26,8 @@ list_t *add_node_end(list_t **head, const char *str)
 
 		if (*head == NULL)
 		{
-			*head  = new_list;
+			*head = new_list;
+			free(new_list->str);
 			return (*head);
 		}
 		else
@@ -36,6 +37,7 @@ list_t *add_node_end(list_t **head, const char *str)
 				temp = temp->next;
 
 			temp->next = new_list;
+			free(new_list->str);
 			return (temp);
 		}
 	}
