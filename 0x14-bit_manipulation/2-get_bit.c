@@ -27,5 +27,8 @@ int get_bit(unsigned long int n, unsigned int index)
 		comp_i++;
 	}
 
+	if (index > comp_i && index < 63)
+		return (0);
+
 	return (-1);
 }
