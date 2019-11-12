@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "holberton.h"
 
 /**
@@ -14,7 +15,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (!filename)
 		return (-1);
 
-	fd = open(filename, O_WRONLY | O_APPEND);
+	fd = open(filename, O_WRONLY | O_APPEND, 0664);
 	if (fd == -1)
 		return (-1);
 
