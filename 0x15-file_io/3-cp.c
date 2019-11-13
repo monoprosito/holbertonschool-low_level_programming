@@ -51,7 +51,7 @@ int copy_file(const char *src, const char *dest)
 
 	if (close(ofd) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %d\n", tfd);
+		dprintf(STDERR_FILENO, "Error: Can't write to %d\n", ofd);
 		exit(100);
 	}
 
