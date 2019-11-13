@@ -29,7 +29,7 @@ int main(int argc, char **argv)
   */
 int copy_file(const char *src, const char *dest)
 {
-	int ofd, tfd, readed = 0;
+	int ofd, tfd, readed;
 	char buff[1024];
 
 	ofd = open(src, O_RDONLY);
