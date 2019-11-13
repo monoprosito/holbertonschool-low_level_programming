@@ -40,19 +40,20 @@ int copy_file(const char *src, const char *dest)
 	}
 
 	tfd = open(dest, O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	if (tfd == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest);
-		exit(99);
-	}
 
 	while ((readed = read(ofd, buff, 1024)) > 0)
 	{
-		if (write(tfd, buff, readed) == -1)
+		if (write(tfd, buff, readed) != readed || tfd == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest);
 			exit(99);
 		}
+	}
+
+	if (readed == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src);
+		exit(98);
 	}
 
 	if (close(ofd) == -1)
