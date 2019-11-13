@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 	}
 
 	copy_file(argv[1], argv[2]);
-	return (0);
+	exit(0);
 }
 
 /**
@@ -27,7 +27,7 @@ int main(int argc, char **argv)
   *
   * Return: ...
   */
-int copy_file(const char *src, const char *dest)
+void copy_file(const char *src, const char *dest)
 {
 	int ofd, tfd, readed;
 	char buff[1024];
@@ -38,34 +38,33 @@ int copy_file(const char *src, const char *dest)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src);
 		exit(98);
 	}
-	tfd = open(dest, O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	if (tfd == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest);
-		exit(99);
-	}
+
+	tfd = open(dest, O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP
+	| S_IWGRP | S_IROTH);
 	while ((readed = read(ofd, buff, 1024)) > 0)
 	{
-		if (write(tfd, buff, readed) != readed)
+		if (write(tfd, buff, readed) != readed || tfd == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest);
 			exit(99);
 		}
 	}
+
 	if (readed == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src);
 		exit(98);
 	}
+
 	if (close(ofd) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %d\n", ofd);
 		exit(100);
 	}
+
 	if (close(tfd) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %d\n", tfd);
 		exit(100);
 	}
-	return (0);
 }
