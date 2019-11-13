@@ -49,7 +49,13 @@ int copy_file(const char *src, const char *dest)
 	while ((readed = read(ofd, buff, 1024)) > 0)
 		write(tfd, buff, readed);
 
-	if (close(ofd) == -1 || close(tfd) == -1)
+	if (close(ofd) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %d\n", tfd);
+		exit(100);
+	}
+
+	if (close(tfd) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %d\n", tfd);
 		exit(100);
