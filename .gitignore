@@ -1,0 +1,6 @@
+# VSCode Workspace
+.vscode
+*.code-workspace
+
+# Executables files
+*.run
