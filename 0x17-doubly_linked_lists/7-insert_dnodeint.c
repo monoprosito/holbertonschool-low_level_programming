@@ -12,7 +12,7 @@
   */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *current = NULL, *new_node = NULL;
+	dlistint_t *current = NULL, *prev = NULL, *new_node = NULL;
 	unsigned int iter_times = 0;
 
 	if (h)
@@ -35,18 +35,18 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 				}
 				++iter_times;
 
-				if (iter_times == idx - 1)
-				{
-					new_node = create_node(n, current->next, current);
-					current->next = new_node;
-					return (new_node);
-				}
-
+				prev = current;
 				current = current->next;
 			}
-		}
 
-		new_node = create_node(n, NULL, NULL);
+			if (iter_times == idx - 1)
+			{
+				new_node = create_node(n, prev->next, prev);
+				prev->next = new_node;
+				return (new_node);
+			}
+		}
+		new_node = create_node(n, *h, NULL);
 		*h = new_node;
 		return (new_node);
 	}
