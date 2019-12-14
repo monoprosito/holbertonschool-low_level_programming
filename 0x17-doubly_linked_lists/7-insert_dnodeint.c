@@ -47,25 +47,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 }
 
 /**
-  * dlistint_len - Counts the number of elements in a doubly linked list
-  * @h: The double linked list to count
-  *
-  * Return: Number of elements in the doubly linked list
-  */
-size_t dlistint_len(const dlistint_t *h)
-{
-	int lenght = 0;
-
-	while (h != NULL)
-	{
-		++lenght;
-		h = h->next;
-	}
-
-	return (lenght);
-}
-
-/**
   * create_node - Create a new node with values
   * @n: The number of the new node
   * @next: The next node of the new node
