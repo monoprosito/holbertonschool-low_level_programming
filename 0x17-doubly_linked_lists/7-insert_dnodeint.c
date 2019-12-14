@@ -12,46 +12,57 @@
   */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *current = NULL, *prev = NULL, *new_node = NULL;
-	unsigned int iter_times = 0;
+	dlistint_t *current = NULL, *new_node = NULL;
+	unsigned int iter_times = 0, length = 0;
 
-	if (h)
+	if (h == NULL)
+		return (NULL);
+
+	if (*h == NULL && idx == 0)
+		return (add_dnodeint(h, n));
+
+	length = dlistint_len(*h);
+	if (idx == 0)
+		return (add_dnodeint(h, n));
+	else if (length == idx)
+		return (add_dnodeint_end(h, n));
+
+	current = *h;
+	while (current != NULL)
 	{
-		current = *h;
-		if (current)
+		if (iter_times == idx)
 		{
-			while (current != NULL)
-			{
-				if (iter_times == idx)
-				{
-					new_node = create_node(n, current, current->prev);
-					current->prev = new_node;
-					current = new_node;
-					if (idx == 0)
-						*h = new_node;
-					else
-						current->prev->next = new_node;
-					return (new_node);
-				}
-				++iter_times;
-
-				prev = current;
-				current = current->next;
-			}
-
-			if (iter_times == idx - 1)
-			{
-				new_node = create_node(n, prev->next, prev);
-				prev->next = new_node;
-				return (new_node);
-			}
+			new_node = create_node(n, current, current->prev);
+			current->prev = new_node;
+			current = new_node;
+			current->prev->next = new_node;
+			return (new_node);
 		}
-		new_node = create_node(n, *h, NULL);
-		*h = new_node;
-		return (new_node);
+
+		current = current->next;
+		++iter_times;
 	}
 
-	return (NULL);
+	return (current);
+}
+
+/**
+  * dlistint_len - Counts the number of elements in a doubly linked list
+  * @h: The double linked list to count
+  *
+  * Return: Number of elements in the doubly linked list
+  */
+size_t dlistint_len(const dlistint_t *h)
+{
+	int lenght = 0;
+
+	while (h != NULL)
+	{
+		++lenght;
+		h = h->next;
+	}
+
+	return (lenght);
 }
 
 /**
