@@ -27,12 +27,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	elem = ht->array[idx];
 	new_node->key = (char *) key;
 	new_node->value = strdup(value);
-
-	if (elem == NULL)
-		new_node->next = NULL;
-	else
-		new_node->next = elem;
-
+	new_node->next = elem;
 	elem = new_node;
 	return (1);
 }
