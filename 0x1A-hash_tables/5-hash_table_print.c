@@ -15,10 +15,7 @@ void hash_table_print(const hash_table_t *ht)
 	short pr_commas = 0;
 
 	if (ht == NULL)
-	{
-		printf("{}\n");
 		return;
-	}
 
 	printf("{");
 
