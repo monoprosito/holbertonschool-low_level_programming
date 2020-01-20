@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 #include "hash_tables.h"
 
 /**
@@ -24,7 +25,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	if (elem == NULL)
 		return (NULL);
 
-	while (key != elem->key)
+	while (strcmp(key, elem->key) != 0)
 		elem = elem->next;
 
 	return (elem->value);
