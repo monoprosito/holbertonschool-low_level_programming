@@ -13,8 +13,8 @@ clean:
 oclean:
 	${RM} -f ${OBJ}
 
-fclean: oclean
+fclean: clean oclean
 
-re: fclean all
+re: oclean all
 
 .PHONY: clean oclean fclean re
