@@ -222,6 +222,26 @@ Write a C program that prints the size of various types on the computer it is co
 
 **Solution:** [6-size.c](https://github.com/monoprosito/holbertonschool-low_level_programming/blob/master/0x00-hello_world/6-size.c)
 
+```
+$ amonkeyprogrammer@ubuntu:~/c/0x00$ gcc 6-size.c -m32 -o size32 2> /tmp/32
+$ amonkeyprogrammer@ubuntu:~/c/0x00$ gcc 6-size.c -m64 -o size64 2> /tmp/64
+$ amonkeyprogrammer@ubuntu:~/c/0x00$ ./size32
+Size of a char: 1 byte(s)
+Size of an int: 4 byte(s)
+Size of a long int: 4 byte(s)
+Size of a long long int: 8 byte(s)
+Size of a float: 4 byte(s)
+$ amonkeyprogrammer@ubuntu:~/c/0x00$ ./size64
+Size of a char: 1 byte(s)
+Size of an int: 4 byte(s)
+Size of a long int: 8 byte(s)
+Size of a long long int: 8 byte(s)
+Size of a float: 4 byte(s)
+$ amonkeyprogrammer@ubuntu:~/c/0x00$ echo $?
+0
+$ amonkeyprogrammer@ubuntu:~/c/0x00$
+```
+
 ## Intel
 
 Write a script that generates the assembly code (Intel syntax) of a C code and save it in an output file.
