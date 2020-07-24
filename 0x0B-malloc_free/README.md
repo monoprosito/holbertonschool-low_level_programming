@@ -166,10 +166,10 @@ int main(void)
     return (0);
 }
 $ amonkeyprogrammer@ubuntu:~/0x0a. malloc, free$ gcc -Wall -pedantic -Werror -Wextra 2-main.c 2-str_concat.c -o c
-$ amonkeyprogrammer@ubuntu:~/c/curriculum_by_$ amonkeyprogrammer/holbertonschool-low_level_programming/0x0a. malloc, free$ ./c | cat -e
+$ amonkeyprogrammer@ubuntu:~/0x0a. malloc, free$ ./c | cat -e
 Betty Holberton$
-$ amonkeyprogrammer@ubuntu:~/c/curriculum_by_$ amonkeyprogrammer/holbertonschool-low_level_programming/0x0a. malloc, free$
-```
+$ amonkeyprogrammer@ubuntu:~/0x0a. malloc, free$
+``` 
 
 ## If you even dream of beating me you'd better wake up and apologize
 
