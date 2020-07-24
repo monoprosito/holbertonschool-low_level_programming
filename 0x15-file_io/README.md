@@ -184,7 +184,7 @@ Write a function that appends text at the end of a file.
 **Solution:** [2-append_text_to_file.c](https://github.com/monoprosito/holbertonschool-low_level_programming/blob/master/0x00-hello_world/0-preprocessor)
 
 ```
-$ amonkeyprogrammer@ubuntu:~/c/curriculum_by_$ amonkeyprogrammer/holbertonschool-low_level_programming/0x15. File descriptors and permissions$ cat 2-main.c
+$ amonkeyprogrammer@ubuntu:~/0x15. File descriptors and permissions$ cat 2-main.c
 #include <stdio.h>
 #include <stdlib.h>
 #include "holberton.h"
