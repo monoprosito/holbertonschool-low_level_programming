@@ -13,7 +13,7 @@ Write a function that concatenates two strings.
 **Solution:** [0-strcat.c](https://github.com/monoprosito/holbertonschool-low_level_programming/blob/master/0x06-pointers_arrays_strings/0-strcat.c)
 
 ```
-$ amonkeyprogrammer@ubuntu:~/c/curriculum_by_$ amonkeyprogrammer/holbertonschool-low_level_programming/0x06$ cat 0-main.c
+$ amonkeyprogrammer@ubuntu:~/0x06$ cat 0-main.c
 #include "holberton.h"
 #include <stdio.h>
 
