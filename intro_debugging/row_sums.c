@@ -19,7 +19,7 @@ int total_sum(int rows, int cols)
 
     for (r = 1; r <= rows; r++)
     {
-        current += row_sum(r, rows);
+        current += row_sum(r, cols);
         total = current;
     }
 
@@ -33,3 +33,4 @@ int main(void)
     printf("%d\n", total_sum(3, 3));
     return 0;
 }
+
