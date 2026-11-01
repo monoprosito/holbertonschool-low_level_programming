@@ -6,7 +6,7 @@ int row_sum(int row, int cols)
     int sum = 0;
 
     for (c = 1; c <= cols; c++)
-        sum += row + c;
+        sum += row * c;
 
     return sum;
 }
