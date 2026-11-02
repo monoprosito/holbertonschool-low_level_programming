@@ -1,15 +1,16 @@
-#ifndef MAIN_H
-#define MAIN_H
+#include "main.h"
+#include <stdio.h>
 
-/* Low-level output tracking */
-int _putchar(char c);
+/**
+ * main - Entry point for the calculator
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	/* Your calculator execution or test calls go here */
+	printf("Calculator holds operations.\n");
+	return (0);
+}
 
-/* Calculator Function Prototypes */
-int add(int a, int b);
-int sub(int a, int b);
-int mul(int a, int b);
-int div(int a, int b);
-int mod(int a, int b);
-
-#endif /* MAIN_H */
 
