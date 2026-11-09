@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/bashayermubarak/Desktop/Hbtn/holbertonschool-low_level_programming/holbertonschool-low_level_programming/benchmarking/instrumentation_lab'
+relocations:     []
+...
